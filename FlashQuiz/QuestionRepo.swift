@@ -11,7 +11,10 @@ struct QuestionRepo {
     var points: Int
     init() throws {
         try self.questions = [
-                "javascript": [Question(content: "Function captures it's lexical environment, what is this called?", options: ["Closure", "Prototype Inhertiance", "Capture Pattern", "None of the above"], answerIndex: 0)]
+                "javascript": [Question(content: "Function captures it's lexical environment, what is this called?", options: ["Closure", "Prototype Inhertiance", "Capture Pattern", "None of the above"], answerIndex: 0)],
+                "ios": [
+                    Question(content: "Which of the following is an API for macOS?", options: ["Cocoa", "Coffee", "Mocha", "Cappucino"], answerIndex: 0)
+                ]
             ]
         self.points = 0;
        

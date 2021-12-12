@@ -127,6 +127,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Sc-WP-DBu" secondAttribute="bottom" id="yEj-Ui-TTd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="questionTypePicker" destination="85u-4c-Nxg" id="K9v-Ff-3oP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
