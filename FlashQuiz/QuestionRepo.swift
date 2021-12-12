@@ -8,6 +8,8 @@
 import Foundation
 struct QuestionRepo {
     var questions : [String:[Question]]
+    var currentQuestionTopic: String = "javascript"
+    var currentQuestionIndex: Int = 0
     var points: Int
     init() throws {
         try self.questions = [
@@ -20,22 +22,30 @@ struct QuestionRepo {
        
     }
     
-    mutating func getQuestionsOfType(_ questionType: String)->[Question]?{
+    mutating func changeType(_ questionType: String){
         points = 0;
-        return questions[questionType]
+        currentQuestionTopic = questionType;
+        currentQuestionIndex = 0;
     }
     
     func getPoints()-> Int{
         return points
     }
-    
-    mutating func checkAnswer(question: Question, givenIndex: Int)->Bool{
-        if(question.isCorrect(givenIndex:givenIndex)){
+    func activeQuestion() -> Question{
+        return questions[currentQuestionTopic]![currentQuestionIndex]
+    }
+    mutating func checkAnswer(givenAnswer: String)->Bool{
+        if(questions[currentQuestionTopic]![currentQuestionIndex].isCorrectAnswerWithText(givenAnswer)){
             points += 1;
             return true
         }
         return false
     }
+    
+    mutating func nextQuestion(){
+        currentQuestionIndex = ( currentQuestionIndex + 1 ) % questions[currentQuestionTopic]!.count
+    }
+    
     
         
 }

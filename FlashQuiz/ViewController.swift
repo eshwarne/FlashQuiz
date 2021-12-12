@@ -8,6 +8,17 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    @IBOutlet weak var questionTypePicker: UIPickerView!
+    @IBOutlet weak var questionContentLabel: UILabel!
+    @IBOutlet weak var optionOne: UIButton!
+    @IBOutlet weak var optionTwo: UIButton!
+    @IBOutlet weak var optionThree: UIButton!
+    @IBOutlet weak var optionFour: UIButton!
+    var options: [UIButton]!
+    var questionRepo: QuestionRepo!
+    var questionTopics: [String]!
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -19,12 +30,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return self.questionTopics[row].uppercased()
         
     }
-    
-    
 
-    @IBOutlet weak var questionTypePicker: UIPickerView!
-    var questionRepo: QuestionRepo!
-    var questionTopics: [String]!
     override func viewDidLoad() {
         super.viewDidLoad()
         do{
@@ -34,8 +40,21 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             print("Error")
         }
         print(self.questionRepo.questions.keys)
+        options = [optionOne, optionTwo, optionThree, optionFour]
         self.questionTypePicker.delegate = self
         self.questionTypePicker.dataSource = self
+        updateUI()
+        
+    }
+    
+    func updateUI(){
+        questionContentLabel.text = questionRepo.activeQuestion().content
+        var index: Int = 0;
+        for option in options {
+            option.setTitle(questionRepo.activeQuestion().options[index], for: .normal)
+            index += 1
+        }
+        
     }
 
 
