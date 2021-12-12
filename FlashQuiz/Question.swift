@@ -33,4 +33,12 @@ struct Question{
             return false
         }
     }
+    func isCorrect(givenIndex: Int) -> Bool{
+        if(givenIndex == answerIndex) {
+            return true
+        } else {
+            return false
+        }
+       
+    }
 }
