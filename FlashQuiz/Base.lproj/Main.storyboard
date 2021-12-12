@@ -22,15 +22,20 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AhC-nP-yDV">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="204.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose a topic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLC-ag-Ubv">
-                                                <rect key="frame" x="20" y="20" width="224.5" height="204.5"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a topic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLC-ag-Ubv">
+                                                <rect key="frame" x="10" y="0.0" width="404" height="204.5"/>
                                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="FLC-ag-Ubv" secondAttribute="bottom" id="Xwz-xp-IVr"/>
+                                            <constraint firstItem="FLC-ag-Ubv" firstAttribute="leading" secondItem="AhC-nP-yDV" secondAttribute="leading" constant="10" id="fnB-hM-BUz"/>
+                                            <constraint firstItem="FLC-ag-Ubv" firstAttribute="top" secondItem="AhC-nP-yDV" secondAttribute="top" id="mIY-R3-hGh"/>
+                                            <constraint firstAttribute="trailing" secondItem="FLC-ag-Ubv" secondAttribute="trailing" id="qLE-V9-Wex"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ckq-TU-kZk">
                                         <rect key="frame" x="0.0" y="204.5" width="414" height="204.5"/>
