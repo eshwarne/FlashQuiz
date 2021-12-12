@@ -47,10 +47,28 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     }
     
+    @IBAction func optionSelected(_ sender: UIButton) {
+        if questionRepo.checkAnswer(givenAnswer: sender.titleLabel!.text!){
+            sender.isEnabled = false
+            sender.backgroundColor = .green
+            sender.tintColor = .white
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.questionRepo.nextQuestion()
+                self.updateUI();
+            }
+        } else {
+            sender.backgroundColor = .red
+            sender.tintColor = .white
+        }
+    
+    }
     func updateUI(){
         questionContentLabel.text = questionRepo.activeQuestion().content
         var index: Int = 0;
         for option in options {
+            option.backgroundColor = nil
+            option.tintColor = nil
+            option.isEnabled = true
             option.setTitle(questionRepo.activeQuestion().options[index], for: .normal)
             index += 1
         }

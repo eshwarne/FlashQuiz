@@ -81,11 +81,17 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="187" height="90.5"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Option A"/>
+                                                        <connections>
+                                                            <action selector="optionSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yhq-cy-3tv"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0j-BC-csE">
                                                         <rect key="frame" x="227" y="0.0" width="187" height="90.5"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Option B"/>
+                                                        <connections>
+                                                            <action selector="optionSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YR0-Pk-LVu"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -100,11 +106,17 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="187" height="90"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Option C"/>
+                                                        <connections>
+                                                            <action selector="optionSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xBe-cS-v19"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTK-Xx-Hli">
                                                         <rect key="frame" x="227" y="0.0" width="187" height="90"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Option D"/>
+                                                        <connections>
+                                                            <action selector="optionSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nyK-Yg-sG4"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
